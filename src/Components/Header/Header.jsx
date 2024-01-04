@@ -4,6 +4,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../../imgs/logo7.png'
 import bg from '../../imgs/background.jpg'
 import '../Header/header.css'
+import FoodChoice from '../FoodChoice/FoodChoice';
 
 
 const Header = () => {
@@ -23,6 +24,7 @@ const Header = () => {
         <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${bg})` }} className="header">
             <h3 className='text-center text-yellow-500 text-5xl mt-40'>Best Food Waiting for YOU!!!</h3>
         </div>
+        <FoodChoice/>
         </>
     );
 };

@@ -1,14 +1,18 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import FoodChoice from './Components/FoodChoice/FoodChoice'
 import Header from './Components/Header/Header'
+import DetailsOfFood from './Components/DetailsOfFood/DetailsOfFood'
 
 function App() {
   
 
   return (
     <>
-      <Header/>
-      <FoodChoice/>
+    <Routes>
+      <Route path='/' element={<Header/>}/>
+      <Route path='/food/:foodId' element={<DetailsOfFood/>}/>
+      <Route path='*' element='ERROR 404 NOT FOUND'/>
+    </Routes>
     </>
   )
 }

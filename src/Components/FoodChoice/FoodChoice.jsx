@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { foods } from '../../foodData/foodData';
 import Foods from '../Foods/Foods';
+import DetailsOfFood from '../DetailsOfFood/DetailsOfFood';
 
 const FoodChoice = () => {
     const [food, setFood]= useState(foods);
@@ -20,9 +21,10 @@ const FoodChoice = () => {
                 <button className='active:text-red-700 focus:text-red-700 focus:underline' onClick={()=>handleCategory('dinner')}>Dinner</button>
                 
         </div>
+
         <div className='grid grid-cols-3 bg-blue-100 col-span-1 place-items-center pt-8 text-center'>
             {
-                category.map(allFood=> <Foods foods={allFood}></Foods>)
+                category.map(allFood=> <Foods key={allFood.id} foods={allFood}></Foods>)
             }
         </div>
         </>

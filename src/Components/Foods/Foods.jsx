@@ -11,7 +11,7 @@ const Foods = ({foods}) => {
                 <h1 className='font-medium'>{title}</h1>
                 <p>{body}</p>
                 <h3 className='font-bold text-xl'>${price}</h3>
-                <Link to={`/food/${id}`}><button className='ml-3 bg-blue-700 hover:bg-blue-500 text-white py-1 px-2 rounded-full mt-2'>Details</button></Link>
+                <Link to={'/food/'+id}><button className='ml-3 bg-blue-700 hover:bg-blue-500 text-white py-1 px-2 rounded-full mt-2'>Details</button></Link>
             </div>
         </div>
     );

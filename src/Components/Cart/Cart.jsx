@@ -5,12 +5,16 @@ const Cart = () => {
     const [cart, setCart]= useContext(CartContext);
     console.log(cart);
     return (
+        <>
+        <div>
+            
+        </div>
         <div>
             {
             cart.map(foods=>{
                 return (
                 <div>
-                <img src={foods.img}></img>
+                <img className='max-w-28' src={foods.img}></img>
                 <h1>{foods.title}</h1>
                 <h1>{foods.price}</h1>
                 </div>
@@ -19,6 +23,7 @@ const Cart = () => {
                 }
             <h1>On Cart: {cart.length}</h1>
         </div>
+        </>
     );
 };
 

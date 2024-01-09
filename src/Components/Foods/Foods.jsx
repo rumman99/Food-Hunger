@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../App';
 
-const Foods = ({foods}) => {
+const Foods = ({foods, handleDropProduct}) => {
     const {title, body, price, img, id}= foods;
+    const [cart, setCart]= useContext(CartContext);
     
     return (
         <div className='pb-10 hover:shadow-2xl shadow-gray-950 p-5'>

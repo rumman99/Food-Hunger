@@ -4,34 +4,29 @@ import Header from './Components/Header/Header'
 import DetailsOfFood from './Components/DetailsOfFood/DetailsOfFood'
 import { createContext, useState } from 'react'
 import Cart from './Components/Cart/Cart'
+import Login from './Components/Login/Login'
+import Home from './Components/Home/Home'
 
 export const CartContext= createContext();
-import lunch1 from "../src/imgs/foods/lunch/lunch1.png"
-import Login from './Components/Login/Login'
+export const LoginUserContext= createContext();
 
 function App() {
-  const [cart, setCart]= useState([{
-    title: 'Healthy Meal Plan',
-    body: 'Change the way of our Taste',
-    id: 1,
-    category: 'lunch',
-    price: 10.99,
-    img: lunch1,
-    
-}]);
-  const [loginUser, setLoginUser]= useState({});
-  console.log(loginUser);
+  const [cart, setCart]= useState([]);
+  const [loginUser, setLoginUser]= useState({isLogin: false, name: '', email: ''});
   
   return (
     <>
-    <CartContext.Provider value={[cart, setCart],[loginUser, setLoginUser]}>
+    <CartContext.Provider value={[cart, setCart]}>
+    <LoginUserContext.Provider value={[loginUser, setLoginUser]}>
+    <Header/>
     <Routes>
-      <Route path='/' element={<Header/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/food/:foodId' element={<DetailsOfFood/>}/>
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='*' element='ERROR 404 NOT FOUND'/>
     </Routes>
+    </LoginUserContext.Provider>
     </CartContext.Provider>
     </>
   )
